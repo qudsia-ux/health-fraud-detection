@@ -76,19 +76,26 @@ The system takes the following inputs:
 ```bash
 cd backend
 python app.py
+```
 
 Backend runs on:
 
 http://127.0.0.1:5000
-🔹 Frontend Setup
+
+
+### 🔹 Frontend Setup
+
+```bash
 cd frontend
 npm install
 npm start
-
+```
 Frontend runs on:
-
 http://localhost:3000
-🔄 Workflow
+
+---
+
+### 🔄 Workflow
 User enters claim details in the web interface
 Data is sent to Flask backend
 Backend preprocesses data (encoding, scaling)
@@ -96,8 +103,9 @@ Machine learning model predicts fraud
 Result + probability is sent back to frontend
 Output is displayed to the user
 
+---
 
-📌 Key Highlights
+### 📌 Key Highlights
 💡 Context-aware predictions using medical conditions
 ⚙️ End-to-end ML pipeline (preprocessing → prediction)
 🌐 Full-stack application (React + Flask)
@@ -108,11 +116,9 @@ Improve model accuracy with advanced algorithms
 Deploy the application online (AWS / Render / Heroku)
 Add user authentication system
 Enhance UI/UX design
-
-👩‍💻 Contributors
+### 👩‍💻 Contributors
 Qudsia Fatima
-Team Members
-🎓 Conclusion
+### 🎓 Conclusion
 
 This project demonstrates how Machine Learning can be applied to solve real-world problems like insurance fraud detection. It improves efficiency, reduces manual effort, and provides faster and more reliable decision-making.
 
