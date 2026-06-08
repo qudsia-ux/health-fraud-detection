@@ -159,8 +159,8 @@ Add authentication system
 Improve UI/UX (charts, dashboards)
 Use deep learning models
 ### 👩‍💻 Contributors
-Qudsia Fatima
-M. Kalyani
+Qudsia Fatima\
+M. Kalyani\
 Sarah Hasan
 ### 🎓 Conclusion
 
