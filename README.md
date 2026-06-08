@@ -1,125 +1,169 @@
 # 🏥 Health Insurance Fraud Detection System
 
-A Machine Learning-based web application that predicts whether a health insurance claim is **Genuine** or **Fraudulent** based on claim details and medical conditions.
+A Machine Learning-based web application that detects fraudulent health insurance claims using multiple algorithms and real-time prediction.
 
 ---
 
-## 📌 Overview
+## 🚀 Project Overview
 
-Health insurance fraud is a major challenge in the healthcare industry, leading to financial losses and inefficiencies. This project aims to automate fraud detection using Machine Learning.
+Insurance fraud is a major issue in the healthcare industry, leading to financial losses and inefficiencies.  
+This project aims to automatically detect fraudulent claims using Machine Learning models trained on a realistic dataset.
 
-The system analyzes user input such as claim amount, patient details, claim history, and diagnosis to predict fraud probability and classification.
-
----
-
-## 🚀 Features
-
-- 🔍 Detects fraudulent insurance claims
-- 📊 Displays fraud probability score
-- 🧠 Uses Machine Learning (Random Forest)
-- 🏥 Includes medical condition-based analysis
-- ⚡ Real-time prediction through web interface
-- 🎯 Simple and user-friendly UI
+The system allows users to input claim details and get predictions along with fraud probability.
 
 ---
 
-## 🧠 Technologies Used
+## 🎯 Features
 
-- **Frontend:** React.js  
-- **Backend:** Flask (Python)  
-- **Machine Learning:** Scikit-learn (Random Forest)  
-- **Data Processing:** Pandas, NumPy  
-
----
-
-## 📊 Input Fields
-
-The system takes the following inputs:
-
-- Claim Amount (₹)
-- Patient Age
-- Length of Stay (Days)
-- Number of Previous Claims
-- Deductible Amount
-- CoPay Amount
-- Claim Submitted Late (Yes/No)
-- Diagnosis (Fever, Cold, Accident, Cancer, etc.)
+- 🔍 Fraud detection using ML models
+- 📊 Probability-based prediction output
+- ⚖️ Comparison of 3 algorithms:
+  - Random Forest 🌲
+  - Logistic Regression 📊
+  - Decision Tree 🌳
+- 🧠 Context-aware predictions (based on diagnosis & medical conditions)
+- 🌐 Full-stack web application (React + Flask)
+- 📈 Large dataset (1600+ records) for better accuracy
 
 ---
 
-## 🎯 Output
+## 🧠 Machine Learning Models
 
-- **Prediction:**  
-  - Genuine Claim  
-  - Fraudulent Claim  
+### 🌲 Random Forest
+- Ensemble learning method
+- Combines multiple decision trees
+- High accuracy and reduced overfitting
 
-- **Fraud Probability (%):**  
-  Indicates the likelihood of fraud
+### 🌳 Decision Tree
+- Rule-based model
+- Easy to interpret
+- Fast but prone to overfitting
+
+### 📊 Logistic Regression
+- Probability-based model
+- Uses sigmoid function
+- Good for understanding feature impact
 
 ---
 
-## 🧪 Example Use Cases
+## ⚙️ Tech Stack
 
-| Scenario | Result |
+### Frontend
+- React.js
+- Axios
+- CSS
+
+### Backend
+- Flask (Python)
+- Pandas, NumPy
+- Scikit-learn
+
+---
+
+## 📂 Project Structure
+health-fraud-detection/
+│
+├── backend/
+│ ├── app.py
+│ ├── model.py
+│ ├── fraud_dataset.csv
+│ ├── rf_model.pkl
+│ ├── lr_model.pkl
+│ ├── dt_model.pkl
+│ ├── scaler.pkl
+│ ├── imputer.pkl
+│ └── columns.pkl
+│
+├── frontend/
+│ ├── src/
+│ │ ├── App.js
+│ │ └── App.css
+│ └── package.json
+│
+└── README.md
+---
+
+### 🔄 Workflow
+
+1. User enters claim details in the UI  
+2. Data is sent to Flask backend  
+3. Backend preprocesses data:
+   - Encoding
+   - Imputation
+   - Scaling  
+4. Models predict fraud probability  
+5. Results from all 3 models are returned  
+6. Frontend displays comparison  
+
+---
+
+## 🧪 Sample Input
+
+| Feature | Example |
 |--------|--------|
-| Low claim + minor illness | ✅ Genuine |
-| High claim + serious condition | ✅ Genuine |
-| High claim + minor illness | ❌ Fraud |
-| Late claim + many previous claims | ❌ Fraud |
+| Claim Amount | 3500000 |
+| Age | 30 |
+| Stay Days | 1 |
+| Previous Claims | 8 |
+| Deductible | 500 |
+| CoPay | 200 |
+| Late | Yes |
+| Diagnosis | Fever |
 
 ---
 
-## ⚙️ How to Run the Project
+## 📊 Sample Output
 
-### 🔹 Backend Setup
+```
+
+Random Forest → Fraud (82%)
+Logistic Regression → Genuine (35%)
+Decision Tree → Fraud (90%)
+
+Best Model → Decision Tree
+```
+
+---
+### ▶️ How to Run
+## 🔹 Backend Setup
 
 ```bash
 cd backend
+pip install -r requirements.txt
+python model.py
 python app.py
 ```
-
-Backend runs on:
-
+## Backend runs on
+```bash
 http://127.0.0.1:5000
-
-
+```
 ### 🔹 Frontend Setup
-
 ```bash
 cd frontend
 npm install
 npm start
 ```
-Frontend runs on:
+## Frontend runs on
+```bash
 http://localhost:3000
-
----
-
-### 🔄 Workflow
-User enters claim details in the web interface
-Data is sent to Flask backend
-Backend preprocesses data (encoding, scaling)
-Machine learning model predicts fraud
-Result + probability is sent back to frontend
-Output is displayed to the user
-
----
-
+```
 ### 📌 Key Highlights
-💡 Context-aware predictions using medical conditions
-⚙️ End-to-end ML pipeline (preprocessing → prediction)
-🌐 Full-stack application (React + Flask)
-📈 Realistic dataset including accident and disease cases
+💡 Real-world dataset with medical conditions & accidents
+⚙️ End-to-end ML pipeline (Preprocessing → Prediction)
+📊 Multi-model comparison for better reliability
+🧠 Intelligent fraud detection logic
 📈 Future Improvements
-Use real-world large insurance datasets
-Improve model accuracy with advanced algorithms
-Deploy the application online (AWS / Render / Heroku)
-Add user authentication system
-Enhance UI/UX design
+Use real-world insurance datasets
+Deploy on cloud (AWS / Render)
+Add authentication system
+Improve UI/UX (charts, dashboards)
+Use deep learning models
 ### 👩‍💻 Contributors
 Qudsia Fatima
+M. Kalyani
+Sarah Hasan
 ### 🎓 Conclusion
 
-This project demonstrates how Machine Learning can be applied to solve real-world problems like insurance fraud detection. It improves efficiency, reduces manual effort, and provides faster and more reliable decision-making.
-
+This project demonstrates how Machine Learning can be applied to solve real-world problems like healthcare fraud detection.
+It improves efficiency, reduces manual effort, and enables faster and more reliable decision-making.
 ⭐ If you found this useful, consider giving it a star!
